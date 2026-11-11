@@ -17,6 +17,10 @@ import ImageMarquee from "../components/ImageMarquee";
 import CostEstimator from "../components/CostEstimator";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import MapSection from "../components/MapSection";
+import TrustStrip from "../components/TrustStrip";
+import MaterialsBand from "../components/MaterialsBand";
+import QuickContact from "../components/QuickContact";
+import FAQ from "../components/FAQ";
 import { useQuote } from "../context/QuoteContext";
 import { waLink } from "../config/site";
 import { WaIcon } from "../components/FloatingWhatsApp";
@@ -28,6 +32,8 @@ const Home = () => {
       <Navbar />
       <Hero />
       <StatsBar />
+
+      <TrustStrip />
       <QualitySplit />
 
       <Features />
@@ -44,6 +50,8 @@ const Home = () => {
 
       <ImageMarquee />
 
+      <MaterialsBand />
+
       <BuildJourney />
 
       <CostEstimator />
@@ -53,6 +61,10 @@ const Home = () => {
       <ProjectGallery />
 
       <Testimonials />
+
+      <FAQ />
+
+      <QuickContact />
 
       <section className="bg-amber py-16 overflow-hidden">
         <Reveal className="container-px flex flex-wrap items-center justify-between gap-6">

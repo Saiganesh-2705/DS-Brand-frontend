@@ -14,11 +14,14 @@ import RouteCurtain from "./components/RouteCurtain";
 import Seo from "./components/Seo";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import MobileActionBar from "./components/MobileActionBar";
+import ScrollProgress from "./components/ScrollProgress";
+import BackToTop from "./components/BackToTop";
 
 function App() {
   return (
     <>
     <Seo />
+    <ScrollProgress />
     <Preloader />
     <RouteCurtain />
     <Routes>
@@ -43,6 +46,7 @@ function App() {
       <Route path="*" element={<Home />} />
     </Routes>
     <FloatingWhatsApp />
+    <BackToTop />
     <MobileActionBar />
     </>
   );
