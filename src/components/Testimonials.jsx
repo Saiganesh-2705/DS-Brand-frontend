@@ -14,7 +14,7 @@ const Testimonials = () => {
     testimonialsAPI
       .getAll()
       .then(({ data }) => {
-        if (data?.length) setItems(data);
+        if (Array.isArray(data) && data.length) setItems(data);
       })
       .catch(() => {});
   }, []);

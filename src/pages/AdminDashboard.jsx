@@ -36,7 +36,7 @@ const AdminDashboard = () => {
     setProjectsLoading(true);
     projectsAPI
       .getAll({ limit: 100 })
-      .then(({ data }) => setProjects(data.projects))
+      .then(({ data }) => setProjects(Array.isArray(data?.projects) ? data.projects : []))
       .catch(() => {})
       .finally(() => setProjectsLoading(false));
   };
@@ -45,7 +45,7 @@ const AdminDashboard = () => {
     setContactsLoading(true);
     contactAPI
       .getAll()
-      .then(({ data }) => setContacts(data))
+      .then(({ data }) => setContacts(Array.isArray(data) ? data : []))
       .catch(() => {})
       .finally(() => setContactsLoading(false));
   };

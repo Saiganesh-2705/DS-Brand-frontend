@@ -22,7 +22,7 @@ const ProjectsCarousel = () => {
   useEffect(() => {
     projectsAPI
       .getAll({ limit: 9 })
-      .then(({ data }) => setProjects(data.projects))
+      .then(({ data }) => setProjects(Array.isArray(data?.projects) ? data.projects : []))
       .catch(() => {})
       .finally(() => setLoading(false));
   }, []);

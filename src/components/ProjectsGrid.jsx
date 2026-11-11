@@ -29,7 +29,7 @@ const ProjectsGrid = ({ limit, showTabs = true }) => {
     projectsAPI
       .getAll({ stage: showTabs ? stage : undefined, limit: limit || 12 })
       .then(({ data }) => {
-        if (!ignore) setProjects(data.projects);
+        if (!ignore) setProjects(Array.isArray(data?.projects) ? data.projects : []);
       })
       .catch(() => {
         if (!ignore) setError("Couldn't load projects right now. Please try again shortly.");
